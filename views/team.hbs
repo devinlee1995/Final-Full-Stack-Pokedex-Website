@@ -1,18 +1,23 @@
-<h1>All Users</h1>
-<ul>	
-	{{#each team}}
-	<li>
-		{{name}}
-	</li>
-	<div id = "team">
-		<img src = "{{src}}">
-	</div>
-	{{/each}}
-</ul>
+<div id = "team_main">
+	<h4> Add a Pokemon to your team!</h4>
+		<form id = "search" action="/team/{{user.id}}" method="POST">
+			<input type ="text" name = "name" placeholder = "Pokemon Name">
+			<input type="submit" class = "activate-modal">
+		</form>
+</div>
 
-<h2> Enter a Pokemon</h2>
-<form action="/team/{{user.id}}" method="POST">
-	<input type ="text" name = "name" placeholder = "Pokemon Name">
-	<input type="submit">
-</form>
+	<div id = "team-display">	
+			{{#each team}}
+			<li>
+				<img src = "{{src}}">
+			</li>
+			{{/each}}
+				<br />
+		<!-- 	{{#each team}}
+				<li id = "names">
+				{{name}}
+				</li>
+			{{/each}} -->
+	</div>
+
 
