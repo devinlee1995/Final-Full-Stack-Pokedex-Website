@@ -1,14 +1,19 @@
-<h1>All Users</h1>
-<ul>	
-	{{#each data}}
-	<li><a href="/team/{{this.id}}">{{this.username}}</a>
-	</li>
-	{{/each}}
-</ul>
 
-<h2> Enter a User!</h2>
-<form action="/login" method="POST">
+
+<div id = "creating">
+<h3>Create an Account</h3>
+<form id = "search" action="/create" method="POST">
+	<input type="text" placeholder="username" name="username" autocomplete = "off">
+	<input type="password" placeholder="password" name="password">
+	<input type="submit">
+</form>
+</div>
+
+<div id = "logging">
+<h3>Log in</h3>
+<form id = "search" action="/login/validate" method="POST" autocomplete = "off">
 	<input type="text" placeholder="username" name="username">
 	<input type="password" placeholder="password" name="password">
 	<input type="submit">
 </form>
+</div>

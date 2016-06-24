@@ -50,6 +50,10 @@ app.get('/about',function(req,res,next){
 		res.render('about');
 });
 
+app.get('/contact',function(req,res,next){
+		res.render('contact');
+});
+
 app.get('/login',function(req,res,next){
 	db.any('SELECT * FROM users')
 	.then(function(data){
@@ -60,7 +64,7 @@ app.get('/login',function(req,res,next){
 	});
 });
 
-app.post('/login',function(req,res,next){
+app.post('/create',function(req,res,next){
 	var newUser = req.body;
 	// expects no rows
 	db.none('INSERT INTO users(username,password,count)'+
@@ -71,6 +75,26 @@ app.post('/login',function(req,res,next){
 	})
 	.catch(function (err){
 		return next(err);
+	});
+});
+
+app.post('/login/validate',function(req,res,next){
+	var username = req.body.username;
+	var password = req.body.password;
+	console.log("The username is: " + username);
+	console.log("The password is: " + password);
+	db.one('SELECT * FROM users WHERE username = ${username}', {username:username})
+   .then(function (user) {
+   		console.log(user.password)
+		if ((user.password == password)) {
+			res.redirect('/team/' + user.id);
+		}
+		else {
+			console.log("Wrong Password! Baka!")
+		}
+	})
+	.catch(function (err){
+		res.redirect('/login');
 	});
 });
 
