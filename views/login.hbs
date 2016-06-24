@@ -1,0 +1,14 @@
+<h1>All Users</h1>
+<ul>	
+	{{#each data}}
+	<li><a href="/team/{{this.id}}">{{this.username}}</a>
+	</li>
+	{{/each}}
+</ul>
+
+<h2> Enter a User!</h2>
+<form action="/login" method="POST">
+	<input type="text" placeholder="username" name="username">
+	<input type="password" placeholder="password" name="password">
+	<input type="submit">
+</form>

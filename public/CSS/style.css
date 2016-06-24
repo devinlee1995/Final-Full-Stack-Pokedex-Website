@@ -1,0 +1,295 @@
+
+nav {
+	position: relative;
+}
+#logo {
+	margin: 10px auto 10px auto;
+	width: 150px;
+	padding-top: 10px; 
+	/*background-color: yellow;*/
+}
+
+#navigation {
+	width: 100%;
+	position: absolute;
+	top:50%;
+	transform: translate(0, -50%);
+	text-align: center;
+}
+#navigation > div {
+	width: 50%;
+	float: left;
+}
+a.links {
+	font-size: 30px;
+	font-family: Verdana;
+	color: black;
+	text-decoration: none;
+}
+
+a.links:hover {
+	text-decoration: underline;
+	color: #FF533F;
+}
+#main_body {
+	background-color: #FF533F;
+	border-radius: 30px;
+	width: 90%;
+	height: 300px;
+	margin: 0px auto 0px auto;
+	position: relative;
+}
+#search_box{
+	margin: 0px auto 0px auto;
+	width: 100%;
+	height: 40%;
+	padding-top: 30px;
+	/*background-color: blue;*/
+}
+
+#search {
+	text-align: center;
+}
+
+#about_us {
+	position: relative;
+	top: 15%;
+	left: 38%;
+	transform: translate(-50%,-50%);
+	width: 75%;
+	height: 150px;
+	padding-top: 10px;
+	margin: 0px auto 0px auto;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#about_image {
+	float: left;
+	width: 175px;
+	height: 200px;
+	padding-right: 20px;
+	padding-left: 40px;
+}
+
+#info {
+	padding-right: 40px;
+	line-height: 18px;
+	text-align: justify;
+	letter-spacing: .2px;
+	position: relative;
+
+}
+
+p {
+	font-family: Verdana;
+	font-size: 15px;
+	color: black;
+}
+
+h5 {
+	color: white;
+	font-family: Verdana; 
+	font-size: 40px;
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 20px;
+	margin-bottom: 60px;
+}
+
+h2 {
+	color: white;
+	font-family: Verdana; 
+	font-size: 40px;
+	text-align: center;
+}
+
+input[type=text] {
+	 width: 50%;
+	 height: 30px;
+	 border-radius: 10px;
+	 outline: none; 
+}
+
+input[type=text]:focus {
+    background-color: none;
+	outline: none; 
+}
+
+input[type=submit] {
+	 width: 20%;
+	 height: 35px;
+	 background-color: #FFEA66;
+	 border-radius: 10px;
+	 font-family: Verdana;
+	 font-size: 15px; 
+	 font-weight: bold;
+	 outline: none; 
+}
+
+input[type=submit]:focus {
+	outline: none; 
+}
+
+/*Loader*/
+.loader {
+	margin: 10px auto 10px auto;
+    background-image:url("../images/Pokeball_Loader.png");
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/*Modal CSS code*/
+.modal-wrapper1{
+  position: fixed;
+  top:0;
+  left:0;
+
+  background-color: rgba(155,155,155,0.6);
+
+  width:100%;
+  height:100%;
+  padding: 0;
+  margin: 0;
+
+  display: none;
+}
+
+.modal-wrapper2{
+  position: fixed;
+  top:0;
+  left:0;
+
+  background-color: rgba(155,155,155,0.6);
+
+  width:100%;
+  height:100%;
+  padding: 0;
+  margin: 0;
+
+  display: none;
+}
+.modal {
+	border: 5px solid white;
+	border-radius: 5px;
+	background-color: white;
+	width: 500px;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.exit {
+	position: absolute;
+	top: 0%;
+	right: 0%;
+}
+#modal-header {
+	margin-top: 10px;
+	text-align: center;
+	position: relative;
+	height: 34px;
+}
+#pokedex {
+	position: relative;
+	bottom: 25%;
+	font-family: Verdana;
+}
+.modal-content {
+	clear: left;
+	height: 200px;
+}
+.modal-content > * {
+	float: left;
+	width: 50%;
+	height: 180px;
+}
+#sideimage {
+	position: relative;
+}
+#sideimage > img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding:20px 10px 20px 10px;
+}
+#modal-info {
+	width: 50%;
+	position: relative;
+}
+#modal-info > div {
+	/*border-bottom: 2px solid black;*/
+	margin-top: 20px;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: left;
+}
+#name {
+	animation: type1 2s steps(60, end);
+	font-family: Verdana;
+}
+@keyframes type1{ 
+	from { width: 45px; } 
+}
+#weight, #height, #types, #sideimage > img{
+	opacity: 1;
+	animation: show 2s ease-in-out;
+	font-family: Verdana;
+} 
+@keyframes show {
+	from { opacity: 0 }
+}
+#types > span {
+	padding: 2px;
+	border-radius: 5px;
+	margin-left: 5px;
+}
+
+#footer {
+	height: 40px;
+	width: 90%;
+	margin: 10px auto 20px auto;
+}
+
+#footerleft {
+	width: 90%;
+	height: 10px;
+	float: left;
+	text-align: left;
+}
+
+#footerright {
+	width: 50%;
+	float: right;
+	text-align: right;
+	margin: 0px;
+}
+
+.footnav {
+	display: inline;
+	margin-left: 10px;	
+}
+
+p.footer {
+	font-family: verdana;
+	font-size: 20px;
+}
+
+#team {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+}
